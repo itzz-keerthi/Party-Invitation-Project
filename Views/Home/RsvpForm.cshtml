@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model PartyInvites.Models.GuestResponse
+@{
+    Layout = null;
+}
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"/>
+        <title>RsvpForm</title>
+    </head>
+    <body>
+        <form asp-action="RsvpForm" method="post">
+            <div>
+                <label asp-for="Name">Your name:</label>
+                <input asp-for="Name"/>
+            </div>
+            <div>
+                <label asp-for="Email">Enter Mail ID:</label>
+                <input asp-for="Email"/>
+            </div>
+            <div>
+                <label asp-for="Phone">Enter mobile no:</label>
+                <input asp-for="Phone"/>
+            </div>
+            <div>
+                <label asp-for="WillAttend">Will you attend?</label>
+                <select asp-for="WillAttend">
+                    <option value="">Choose an option</option>
+                    <option value="true">Yes, I will attend</option>
+                    <option value="false">No, I won't be available on that day</option>
+                </select>
+            </div>
+            <button type="submit">Submit RSVP</button>
+        </form>
+    </body>
+</html>
